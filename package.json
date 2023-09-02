@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@polkadot/extension-dapp": "^0.46.5"
+  }
+}
