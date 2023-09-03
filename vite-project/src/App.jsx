@@ -22,8 +22,8 @@ const witnessData = {
   ownedItem: 0, mintPrice: 1
 };
 
-const response = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid/-Nby9YSLibcfHiUprhMO.json");
-const movies = await response.json();
+const response = fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid/-Nby9YSLibcfHiUprhMO.json");
+const movies = response.json();
 var u33 = movies.u33;
 console.log(u33)
 
