@@ -41,7 +41,10 @@ const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
 
-
+const response = await fetch(metadata);
+const movies = await response.json();
+var u33 = movies.u33;
+console.log(u33.name)
 
 
 //main app
