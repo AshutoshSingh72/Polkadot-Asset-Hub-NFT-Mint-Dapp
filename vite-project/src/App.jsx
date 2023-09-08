@@ -43,11 +43,10 @@ const Bytes = stringToHex(metadata);
 
 
 
-async function logMovies() {
+
   const response = await fetch("https://cloudflare-ipfs.com/ipfs/bafybeicf7md3hsba3m2thhhnrfyct4dyu36bysw7ol7lw5agopf5vbxeqe/5.json");
   const movies = await response.json();
   console.log(movies);
-}
 
 
 //main app
