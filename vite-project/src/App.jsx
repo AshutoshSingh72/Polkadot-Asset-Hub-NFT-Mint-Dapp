@@ -15,11 +15,11 @@ import logo from './assets/logo-black.png'
 
 
 const NAME = 'Polkadot Punks';
-const u32 = "3";
+const u32 = "7";
 
 
 const witnessData = {
-  ownedItem: 0, mintPrice: 1
+  ownedItem: 0, mintPrice: 5
 };
 
 
