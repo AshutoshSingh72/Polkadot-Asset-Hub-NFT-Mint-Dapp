@@ -36,7 +36,7 @@ console.log(u33)
 
 
 ///metadata///
-const cloudflare_url = "ipfs://bafybeibl4dy66eh45mns4awurxoreqxphaul4b42q2tuuey5x4zzassrf4/";
+const cloudflare_url = "ipfs://bafybeibe6ihmid6i5a777n4znvnovok6szkju6ijde4wzprd2zkntqj4gi/";
 const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
