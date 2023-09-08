@@ -44,7 +44,7 @@ const Bytes = stringToHex(metadata);
 const response = await fetch("ipfs://bafybeicf7md3hsba3m2thhhnrfyct4dyu36bysw7ol7lw5agopf5vbxeqe/5.json");
 const movies = await response.json();
 var u33 = movies.u33;
-console.log(u33.name)
+console.log(u33)
 
 
 //main app
