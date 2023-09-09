@@ -264,8 +264,7 @@ const injector = await web3FromAddress(SENDER);
 
     const MultiAddress = SENDER;
 
-api.tx.utility.batchAll([ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData )/*,
-  await api.tx.nfts.setMetadata(u32, u33, Bytes )*/]).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
+api.tx.utility.batchAll([ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData )]).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
     if (status.isInBlock) {
         toast.success(`Completed at block hash #${status.asInBlock.toString()}` , {
           position: "top-right",
