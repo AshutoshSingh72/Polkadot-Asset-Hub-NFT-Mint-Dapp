@@ -19,7 +19,7 @@ const u32 = "7";
 
 
 const witnessData = {
-  ownedItem: 0, mintPrice: 50000000000
+  ownedItem: 0, mintPrice: 40000000000
 };
 
 
