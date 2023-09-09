@@ -358,7 +358,7 @@ theme="colored" />
       
       <h1 className='PolkadotPunks'>Polkadot Punks</h1>
 <hr className='hr'></hr>
-<h2 className='count'>{u33} / 10,000 Minted</h2>
+<h2 className='count'>{u33} / 2,500 Minted</h2>
 <h2 className='Price'> Mint Price : 5 DOT</h2>
 <hr className='hr2'></hr>
 <small>©Polkadot Punks, 2023.</small>
