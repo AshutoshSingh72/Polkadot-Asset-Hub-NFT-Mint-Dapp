@@ -320,27 +320,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
       
 });
 
- const MNEMONIC = 'forest walnut shoot news act survey cave jungle hello shiver this spawn';
 
-// type: ed25519, ssFormat: 42 (all defaults)
-const keyring = new Keyring();
-const pair = keyring.createFromUri(MNEMONIC);
-await api.tx.nfts.setMetadata(u32, u33, Bytes )
-    .signAndSend(pair);
-
-// use the default as setup on init
-// 5CSbZ7wG456oty4WoiX6a1J88VUbrCXLhrKVJ9q95BsYH4TZ
-console.log('Substrate generic', pair.address);
-
-// adjust the default ss58Format for Kusama
-// CxDDSH8gS7jecsxaRL9Txf8H5kqesLXAEAEgp76Yz632J9M
-keyring.setSS58Format(2);
-console.log('Kusama', pair.address);
-
-// adjust the default ss58Format for Polkadot
-// 1NthTCKurNHLW52mMa6iA8Gz7UFYW5UnM3yTSpVdGu4Th7h
-keyring.setSS58Format(0);
-console.log('Polkadot', pair.address);
 
 
 }
