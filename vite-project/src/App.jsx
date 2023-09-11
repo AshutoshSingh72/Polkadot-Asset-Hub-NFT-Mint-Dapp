@@ -284,7 +284,6 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           theme: "colored",
           });
         
-        u33++
 
 
 
