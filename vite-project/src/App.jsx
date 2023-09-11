@@ -283,7 +283,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           progress: undefined,
           theme: "colored",
           });
-        
+        u33++
 
 
 
@@ -294,7 +294,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      "u33": u33++
+      "u33": u33
     })
   });
   console.log(res)
