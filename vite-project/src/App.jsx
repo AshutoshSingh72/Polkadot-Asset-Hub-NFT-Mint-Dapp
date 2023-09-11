@@ -264,18 +264,7 @@ const injector = await web3FromAddress(SENDER);
     const MultiAddress = SENDER;
 
 await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
-    if (status.isInBlock) {
-        toast.success(`Completed at block hash #${status.asInBlock.toString()}` , {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          });
-          const MNEMONIC = 'forest walnut shoot news act survey cave jungle hello shiver this spawn';
+    const MNEMONIC = 'forest walnut shoot news act survey cave jungle hello shiver this spawn';
 
 // type: ed25519, ssFormat: 42 (all defaults)
 const keyring = new Keyring();
@@ -296,6 +285,18 @@ console.log('Kusama', pair.address);
 // 1NthTCKurNHLW52mMa6iA8Gz7UFYW5UnM3yTSpVdGu4Th7h
 keyring.setSS58Format(0);
 console.log('Polkadot', pair.address);
+    if (status.isInBlock) {
+        toast.success(`Completed at block hash #${status.asInBlock.toString()}` , {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+        
         u33++
 
 
