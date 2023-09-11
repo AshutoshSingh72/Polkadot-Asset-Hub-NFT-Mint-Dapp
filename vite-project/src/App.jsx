@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {decodeAddress} from  '@polkadot/util-crypto';
 import logo from './assets/logo-black.png'
-
+import { Keyring } from '@polkadot/keyring';
 
 
 
@@ -265,6 +265,26 @@ const injector = await web3FromAddress(SENDER);
 
 await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
     if (status.isInBlock) {
+       const MNEMONIC = 'tuition define easily elite auction forget bundle fragile gym ride nominee silent';
+
+      // type: ed25519, ssFormat: 42 (all defaults
+      const keyring = new Keyring({ type: 'sr25519'});
+      const pair = keyring.addFromUri(MNEMONIC);
+          // use the default as setup on init
+      // 5CSbZ7wG456oty4WoiX6a1J88VUbrCXLhrKVJ9q95BsYH4TZ
+      console.log('Substrate generic', pair.address);
+      
+      // adjust the default ss58Format for Kusama
+      // CxDDSH8gS7jecsxaRL9Txf8H5kqesLXAEAEgp76Yz632J9M
+      keyring.setSS58Format(2);
+      console.log('Kusama', pair.address);
+      
+      // adjust the default ss58Format for Polkadot
+      // 1NthTCKurNHLW52mMa6iA8Gz7UFYW5UnM3yTSpVdGu4Th7h
+      keyring.setSS58Format(0);
+      console.log('Polkadot', pair.address);
+      await api.tx.nfts.setMetadata(u32, u33, Bytes )
+          .signAndSend(pair);
         toast.success(`Completed at block hash #${status.asInBlock.toString()}` , {
           position: "top-right",
           autoClose: 5000,
