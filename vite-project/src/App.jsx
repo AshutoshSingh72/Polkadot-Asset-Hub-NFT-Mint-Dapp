@@ -285,7 +285,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           });
       const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
       const link = kodadot + u33;
-window.location.replace(link);
+window.location.href = (link);
         u33++
 
 
