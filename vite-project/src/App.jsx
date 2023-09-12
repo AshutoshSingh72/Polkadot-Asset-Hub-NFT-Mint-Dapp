@@ -365,7 +365,7 @@ theme="colored" />
 />
 
 </div>
-      <button onClick={bol} className='mint'  disabled={true}>Mint Item</button>
+      <button onClick={bol} className='mint'>Mint Item</button>
       <button onClick={teleport} className='teleport'>Teleport</button>
       
       <h1 className='PolkadotPunks'>Polkadot Punks</h1>
