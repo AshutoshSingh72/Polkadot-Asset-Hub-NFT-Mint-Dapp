@@ -283,7 +283,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           progress: undefined,
           theme: "colored",
           });
-      const kodadot = "https://canary.kodadot.xyz/ahp/collection/7-";
+      const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
       const link = kodadot + u33;
 window.location.replace(link);
         u33++
