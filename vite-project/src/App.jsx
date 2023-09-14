@@ -376,7 +376,7 @@ theme="colored" />
 </div>
 <br></br>
 <div className='mintitem'>
-<button onClick={bol} className='mint' disabled={true}>Mint Item</button>
+<button onClick={bol} className='mint' >Mint Item</button>
 </div>
 <hr className='hr2'></hr>
 <small>©Polkadot Punks, 2023.</small>
