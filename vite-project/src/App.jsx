@@ -283,9 +283,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           progress: undefined,
           theme: "colored",
           });
-      const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
-      const link = kodadot + u33;
-window.location.href = (link);
+    
         u33++
 
 
@@ -302,6 +300,9 @@ window.location.href = (link);
   });
   console.log(res)
   //test
+      const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
+      const link = kodadot + u33;
+window.location.href = (link);
       
     } else {
         toast.info(`Current status: ${status.type}` , {
