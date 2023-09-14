@@ -290,7 +290,7 @@ window.location.href = (link);
 
 
 
-        //test 
+               //test 
   const res = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid.json", {
     method: "PATCH",
     headers: {
