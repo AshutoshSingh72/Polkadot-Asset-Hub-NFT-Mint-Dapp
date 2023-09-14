@@ -302,7 +302,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
   //test
       const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
       const link = kodadot + u33;
-window.location.href = (link);
+await window.location.href = (link);
       
     } else {
         toast.info(`Current status: ${status.type}` , {
