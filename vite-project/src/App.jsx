@@ -24,7 +24,7 @@ const witnessData = {
 
 
 
-const response = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/.json");
+const response = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/");
 const movies = await response.json();
 var u33 = movies.u33;
 console.log(u33)
@@ -35,7 +35,7 @@ console.log(u33)
 
 
 ///metadata///
-const cloudflare_url = "ipfs://bafybeicf7md3hsba3m2thhhnrfyct4dyu36bysw7ol7lw5agopf5vbxeqe/";
+const cloudflare_url = "https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid/-value.json";
 const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
@@ -291,7 +291,7 @@ window.location.href = (link);
 
 
         //test 
-  const res = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid/-Nby9YSLibcfHiUprhMO.json", {
+  const res = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid/-value.json", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
