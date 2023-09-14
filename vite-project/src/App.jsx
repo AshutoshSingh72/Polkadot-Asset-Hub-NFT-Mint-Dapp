@@ -177,7 +177,7 @@ const injector = await web3FromAddress(SENDER);
           }
         },
         fun: {
-          Fungible : 52000000000
+          Fungible : 50500000000
         }
       }
     ]
