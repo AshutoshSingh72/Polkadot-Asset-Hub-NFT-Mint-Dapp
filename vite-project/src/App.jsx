@@ -24,7 +24,7 @@ const witnessData = {
 
 
 
-const response = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid/-Nby9YSLibcfHiUprhMO");
+const response = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/.json");
 const movies = await response.json();
 var u33 = movies.u33;
 console.log(u33)
