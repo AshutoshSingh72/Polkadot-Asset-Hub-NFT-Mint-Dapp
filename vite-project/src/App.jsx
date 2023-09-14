@@ -365,13 +365,19 @@ theme="colored" />
 />
 
 </div>
-      <button onClick={bol} className='mint'>Mint Item</button>
-      <button onClick={teleport} className='teleport'>Teleport</button>
+      
       
       <h1 className='PolkadotPunks'>Polkadot Punks</h1>
 <hr className='hr'></hr>
 <h2 className='count'>{u33} / 10,000 Minted</h2>
 <h2 className='Price'> Mint Price : 5 DOT</h2>
+      <div className='teleport-style'>
+<button onClick={teleport} className='teleport'>Teleport</button>
+</div>
+<br></br>
+<div className='mintitem'>
+<button onClick={bol} className='mint' disabled={true}>Mint Item</button>
+</div>
 <hr className='hr2'></hr>
 <small>©Polkadot Punks, 2023.</small>
 <div>
