@@ -13,7 +13,31 @@ import { Keyring } from '@polkadot/keyring';
 
 
 
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 const NAME = 'Polkadot Punks';
 const u32 = "7";
 
@@ -288,7 +312,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
 
           const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
       const link = kodadot + u33;
-await window.location.href = (link);
+  window.location.href = (link);
         u33++
 
 
@@ -381,6 +405,14 @@ theme="colored" />
 <br></br>
 <div className='mintitem'>
 <button onClick={bol} className='mint' >Mint Item</button>
+</div>
+<button id="myBtn">open modal</button>
+<div id="myModal" class="modal">
+<div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
 </div>
 <hr className='hr2'></hr>
 <small>©Polkadot Punks, 2023.</small>
