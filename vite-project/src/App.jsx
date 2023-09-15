@@ -370,7 +370,7 @@ theme="colored" />
       
       <h1 className='PolkadotPunks'>Polkadot Punks</h1>
 <hr className='hr'></hr>
-<h2 className='count'>{u33} / 10,000 Minted</h2>
+<h2 className='count'>{u33} / 3000 Minted</h2>
 <h2 className='Price'> Mint Price : 5 DOT</h2>
       <div className='teleport-style'>
 <button onClick={teleport} className='teleport'>Teleport</button>
