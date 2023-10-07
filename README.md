@@ -15,3 +15,5 @@ start editing [App.jsx](vite-project/src/App.jsx) accordingly read comments one 
 Adding Css edit [App.css](vite-project/src/App.css) for adding new css
 
 Adding Html edit [index.html]( vite-project/index.html)
+
+Run `npm run dev` to view mint dapp on local host
