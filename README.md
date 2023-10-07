@@ -1,6 +1,6 @@
 # Mint-Dapp for Polkadot & kusama Asset Hubs
 
-### Prequistie
+### Prerequistie
 Node-js installed
 
 VS code installed or github codespace
