@@ -12,6 +12,6 @@ Run Npm install or npm i
 
 start editing [App.jsx](vite-project/src/App.jsx) accordingly read comments one by one and make changes
 
-Adding Css edit vite-project/src/App.css for adding new css
+Adding Css edit [App.css](vite-project/src/App.css) for adding new css
 
-Adding Html edit vite-project/index.html
+Adding Html edit [index.html]( vite-project/index.html)
