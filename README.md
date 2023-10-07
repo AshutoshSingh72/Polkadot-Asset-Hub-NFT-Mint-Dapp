@@ -10,7 +10,7 @@ Firebase Database
 ### Setting up
 Run Npm install or npm i
 
-start editing vite-project/src/App.jsx accordingly read comments one by one and make changes
+start editing [App.jsx](vite-project/src/App.jsx) accordingly read comments one by one and make changes
 
 Adding Css edit vite-project/src/App.css for adding new css
 
