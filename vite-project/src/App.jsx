@@ -11,17 +11,18 @@ import logo from './assets/logo-black.png'
 import { Keyring } from '@polkadot/keyring';
 
 
-
+//Dapp name
 const NAME = 'Polkadot Punks';
+//collection id
 const u32 = "7";
 
-
+//witnessdata of the mint
 const witnessData = {
   ownedItem: 0
 };
 
 
-
+//Firebase fetch api get item id
 const response = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid.json");
 const movies = await response.json();
 var u33 = movies.u33;
@@ -32,7 +33,8 @@ console.log(u33)
 
 
 
-///metadata///
+///nft metadata upload nft metadata json file to ipfs copy link like this///
+//input json metadata ipfs link here
 const cloudflare_url = "ipfs://bafybeicf7md3hsba3m2thhhnrfyct4dyu36bysw7ol7lw5agopf5vbxeqe/";
 const json = ".json";
 const metadata = cloudflare_url + u33 + json;
@@ -54,6 +56,7 @@ function App() {
 
 
   const setup = async() => {
+    //This wsProvider is for Polkadot based mint dapp for kusama change statemint to statemine only
     const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
@@ -122,7 +125,7 @@ function App() {
 
 
 
-  ///mint function
+  ///bridge Dot to Asset Hub for Ksm to Asset hub change wsProvider to wss://kusama-rpc.polkadot.io
 
   async function teleport() {
     const publicKey = decodeAddress(selectedAccount.address);
@@ -175,6 +178,7 @@ const injector = await web3FromAddress(SENDER);
           }
         },
         fun: {
+          //Token amount dot or ksm
           Fungible : 50500000000
         }
       }
@@ -234,7 +238,9 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
 
 
   }
+  //Mint Function 
 async function bol(){
+  //kusama wsProvider wss://kusama-rpc.polkadot.io
   const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
