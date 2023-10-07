@@ -8,7 +8,7 @@ VS code installed or github codespace
 Firebase Database
 
 ### Setting up
-Run Npm install or npm i
+Run `Npm install` or `npm i`
 
 start editing [App.jsx](vite-project/src/App.jsx) accordingly read comments one by one and make changes
 
