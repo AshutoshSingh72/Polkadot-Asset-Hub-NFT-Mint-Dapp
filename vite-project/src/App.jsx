@@ -23,7 +23,7 @@ const witnessData = {
 
 
 //Firebase fetch api get item id
-const response = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com.json");
+const response = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com/u33.json");
 const movies = await response.json();
 var u33 = movies.u33;
 console.log(u33)
