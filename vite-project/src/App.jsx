@@ -41,7 +41,7 @@ const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
 
-console.log(MNEMONIC)
+console.log JSON.parse(MNEMONIC.)
 
 
  
