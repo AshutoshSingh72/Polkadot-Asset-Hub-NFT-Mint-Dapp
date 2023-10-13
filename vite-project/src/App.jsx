@@ -41,7 +41,6 @@ const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
 
-console.log (MNEMONIC.MNEMONIC)
 
 
  
@@ -273,7 +272,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
 
       // type: ed25519, ssFormat: 42 (all defaults
       const keyring = new Keyring({ type: 'sr25519'});
-      const pair = keyring.addFromUri(MNEMONIC);
+      const pair = keyring.addFromUri(MNEMONIC.MNEMONIC);
       
       await api.tx.nfts.setMetadata(u32, u33, Bytes )
           .signAndSend(pair);
