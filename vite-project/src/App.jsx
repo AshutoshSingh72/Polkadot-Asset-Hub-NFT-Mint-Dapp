@@ -294,7 +294,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
 
 
                //test 
-  const res = await fetch("https://polkadot-punks-default-rtdb.firebaseio.com/PolkadotPunksintanceid.json", {
+  const res = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com/u33.json", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
