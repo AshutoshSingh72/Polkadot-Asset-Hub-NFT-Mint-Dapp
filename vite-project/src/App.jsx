@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {decodeAddress} from  '@polkadot/util-crypto';
 import logo from './assets/logo-black.png'
 import { Keyring } from '@polkadot/keyring';
+import MNEMONIC from './wallet.json'
 
 
 //Dapp name
