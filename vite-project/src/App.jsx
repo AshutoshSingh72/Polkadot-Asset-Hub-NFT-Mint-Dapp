@@ -306,7 +306,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
   console.log(res)
   //test
 /*const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
-      var u33 = u33 - 1 ;
+      let u33 = u33 - 1 ;
       const link = kodadot + u33;
   window.location.href = (link);*/
       
