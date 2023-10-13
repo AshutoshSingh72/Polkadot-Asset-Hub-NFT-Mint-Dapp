@@ -269,7 +269,7 @@ const injector = await web3FromAddress(SENDER);
 
 await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
     if (status.isInBlock) {
-       const MNEMONIC = 'tuition define easily elite auction forget bundle fragile gym ride nominee silent';
+       const MNEMONIC = "tuition define easily elite auction forget bundle fragile gym ride nominee silent";
 
       // type: ed25519, ssFormat: 42 (all defaults
       const keyring = new Keyring({ type: 'sr25519'});
@@ -305,7 +305,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
   });
   console.log(res)
   //test
-  /*const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
+/*const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
       let u33 = u33 - 1 ;
       const link = kodadot + u33;
   window.location.href = (link);*/
