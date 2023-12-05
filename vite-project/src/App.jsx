@@ -187,7 +187,7 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
 
   }
   //Mint Function 
-async function bol(){
+async function mint(){
   //kusama wsProvider wss://kusama-rpc.polkadot.io
   const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
     const api = await ApiPromise.create({ provider: wsProvider})
@@ -318,7 +318,7 @@ theme="colored" />
 </div>
 <br></br>
 <div className='mintitem'>
-<button onClick={bol} className='mint' >Mint Item</button>
+<button onClick={mint} className='mint' >Mint Item</button>
 </div>
 
 <hr className='hr2'></hr>
