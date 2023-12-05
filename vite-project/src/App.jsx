@@ -11,7 +11,6 @@ import logo from './assets/logo-black.png'
 import { Keyring } from '@polkadot/keyring';
 import MNEMONIC from './wallet.json'
 
-
 //Dapp name
 const NAME = 'Polkadot Punks';
 //collection id
@@ -22,17 +21,11 @@ const witnessData = {
   ownedItem: 0
 };
 
-
 //Firebase fetch api get item id
 const response = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com/u33.json");
 const movies = await response.json();
 var u33 = movies;
 console.log(u33)
-
-
-
-
-
 
 ///nft metadata upload nft metadata json file to ipfs copy link like this///
 //input json metadata ipfs link here
@@ -41,11 +34,6 @@ const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
 
-
-
- 
-
-
 //main app
 function App() {
   
@@ -53,31 +41,16 @@ function App() {
   const [accounts, setAccounts] = useState([]);
   const [selectedAccount, setselectedAccounts] = useState();
 
-
-
   const setup = async() => {
     //This wsProvider is for Polkadot based mint dapp for kusama change statemint to statemine only
-    const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
+    const wsProvider = new WsProvider("https://statemint.api.onfinality.io/public");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
   }
 
-
-
-
-
-
   //connect function
   const connect = async() => {
     const extension = await web3Enable(NAME);
-   
-
-
-    
-
-
-
-
     
     /*const SubWalletExtension = window.injectedWeb3['subwallet-js'];
     const extension = await SubWalletExtension.enable();*/
@@ -96,8 +69,6 @@ function App() {
         
   }
 
-
-
   //select wallet
   const selectaccount = async() => {
        const selectaccounts = document.getElementById("select").value;
@@ -112,18 +83,6 @@ function App() {
       }
       
   }
-
-
-
-
-
-
-
-  
-
-
-
-
 
   ///bridge Dot to Asset Hub for Ksm to Asset hub change wsProvider to wss://kusama-rpc.polkadot.io
 
@@ -187,14 +146,6 @@ const injector = await web3FromAddress(SENDER);
   const feeAssetItem = 0;
   const weightLimit = "Unlimited";
 
-
-
-
-
-
-
-
-
 api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, beneficiary, assets, feeAssetItem, weightLimit)]).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
     if (status.isInBlock) {
         toast.success(`Completed at block hash #${status.asInBlock.toString()}` , {
@@ -234,9 +185,6 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
       });
     });
 
-
-
-
   }
   //Mint Function 
 async function bol(){
@@ -253,9 +201,6 @@ const allAccounts = await web3Accounts();
 
 // the address we use to use for signing, as injected
 const SENDER = selectedAccount.address;
-
-
-
 
 // finds an injector for an address
 const injector = await web3FromAddress(SENDER);
@@ -286,11 +231,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           progress: undefined,
           theme: "colored",
           });
-
-
         u33++
-
-
 
                //test 
   const res = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com/u33.json", {
@@ -336,9 +277,6 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
       
 });
 
-
-
-
 }
   return (
     <>
@@ -371,12 +309,10 @@ theme="colored" />
 />
 
 </div>
-      
-      
       <h1 className='PolkadotPunks'>Polkadot Punks</h1>
 <hr className='hr'></hr>
 <h2 className='count'>{u33} / 3000 Minted</h2>
-<h2 className='Price'> Mint Price : 5 DOT</h2>
+<h2 className='Price'> Mint Price : 2 DOT</h2>
       <div className='teleport-style'>
 <button onClick={teleport} className='teleport'>Teleport</button>
 </div>
