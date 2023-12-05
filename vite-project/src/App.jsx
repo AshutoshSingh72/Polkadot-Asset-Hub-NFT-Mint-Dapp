@@ -189,7 +189,7 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
   //Mint Function 
 async function mint(){
   //kusama wsProvider wss://kusama-rpc.polkadot.io
-  const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
+  const wsProvider = new WsProvider("wss://statemint.api.onfinality.io/public-ws");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
   // (this needs to be called first, before other requests)
