@@ -43,7 +43,7 @@ function App() {
 
   const setup = async() => {
     //This wsProvider is for Polkadot based mint dapp for kusama change statemint to statemine only
-    const wsProvider = new WsProvider("wss://statemint.api.onfinality.io/ws?apikey=023fc078-a5b7-4a72-81c4-40e118b6097b");
+    const wsProvider = new WsProvider("wss://statemint.api.onfinality.io");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
   }
@@ -189,7 +189,7 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
   //Mint Function 
 async function mint(){
   //kusama wsProvider wss://kusama-rpc.polkadot.io
-  const wsProvider = new WsProvider("wss://statemint.api.onfinality.io/ws?apikey=023fc078-a5b7-4a72-81c4-40e118b6097b");
+  const wsProvider = new WsProvider("wss://statemint.api.onfinality.io");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
   // (this needs to be called first, before other requests)
@@ -231,6 +231,7 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           progress: undefined,
           theme: "colored",
           });
+      
         u33++
 
                //test 
