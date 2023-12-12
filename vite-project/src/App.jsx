@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import {decodeAddress} from  '@polkadot/util-crypto';
 import logo from './assets/logo-black.png'
 import { Keyring } from '@polkadot/keyring';
-import MNEMONIC from './wallet.json'
+
 
 //Dapp name
 const NAME = 'Polkadot Punks';
@@ -21,11 +21,18 @@ const witnessData = {
   ownedItem: 0
 };
 
+
 //Firebase fetch api get item id
-const response = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com/u33.json");
+//adding firebase api link into response
+const response = await fetch("");
 const movies = await response.json();
-var u33 = movies;
+var u33 = movies.u33;
 console.log(u33)
+
+
+
+
+
 
 ///nft metadata upload nft metadata json file to ipfs copy link like this///
 //input json metadata ipfs link here
@@ -34,12 +41,20 @@ const json = ".json";
 const metadata = cloudflare_url + u33 + json;
 const Bytes = stringToHex(metadata);
 
+
+
+
+ 
+
+
 //main app
 function App() {
   
   const [api, setApi] = useState();
   const [accounts, setAccounts] = useState([]);
   const [selectedAccount, setselectedAccounts] = useState();
+
+
 
   const setup = async() => {
     //This wsProvider is for Polkadot based mint dapp for kusama change statemint to statemine only
@@ -48,9 +63,22 @@ function App() {
     setApi(api);
   }
 
+
+
+
+
+
   //connect function
   const connect = async() => {
     const extension = await web3Enable(NAME);
+   
+
+
+    
+
+
+
+
     
     /*const SubWalletExtension = window.injectedWeb3['subwallet-js'];
     const extension = await SubWalletExtension.enable();*/
@@ -69,6 +97,8 @@ function App() {
         
   }
 
+
+
   //select wallet
   const selectaccount = async() => {
        const selectaccounts = document.getElementById("select").value;
@@ -83,6 +113,18 @@ function App() {
       }
       
   }
+
+
+
+
+
+
+
+  
+
+
+
+
 
   ///bridge Dot to Asset Hub for Ksm to Asset hub change wsProvider to wss://kusama-rpc.polkadot.io
 
@@ -146,6 +188,14 @@ const injector = await web3FromAddress(SENDER);
   const feeAssetItem = 0;
   const weightLimit = "Unlimited";
 
+
+
+
+
+
+
+
+
 api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, beneficiary, assets, feeAssetItem, weightLimit)]).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
     if (status.isInBlock) {
         toast.success(`Completed at block hash #${status.asInBlock.toString()}` , {
@@ -185,9 +235,12 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
       });
     });
 
+
+
+
   }
   //Mint Function 
-async function bol(){
+async function mint(){
   //kusama wsProvider wss://kusama-rpc.polkadot.io
   const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
     const api = await ApiPromise.create({ provider: wsProvider})
@@ -202,6 +255,9 @@ const allAccounts = await web3Accounts();
 // the address we use to use for signing, as injected
 const SENDER = selectedAccount.address;
 
+
+
+
 // finds an injector for an address
 const injector = await web3FromAddress(SENDER);
 
@@ -214,10 +270,12 @@ const injector = await web3FromAddress(SENDER);
 
 await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER, { signer: injector.signer }, async ({ status }) => {
     if (status.isInBlock) {
+      //Enter seed phrase do not share this line of code and make your github repository private seed phrase is required to set metadata of the nft because only collection owner is allowed to set metadata
+       const MNEMONIC = ' ';
 
       // type: ed25519, ssFormat: 42 (all defaults
       const keyring = new Keyring({ type: 'sr25519'});
-      const pair = keyring.addFromUri(MNEMONIC.MNEMONIC);
+      const pair = keyring.addFromUri(MNEMONIC);
       
       await api.tx.nfts.setMetadata(u32, u33, Bytes )
           .signAndSend(pair);
@@ -231,11 +289,15 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
           progress: undefined,
           theme: "colored",
           });
-      
+
+//increasing item id to next once transaction is confirmed
         u33++
 
-               //test 
-  const res = await fetch("https://polkadot-661a0-default-rtdb.firebaseio.com/u33.json", {
+
+
+               //changing firebase stored item id to next
+      //adding firebase api link again for change in response
+  const res = await fetch("", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
@@ -245,11 +307,11 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
     })
   });
   console.log(res)
-  //test
-/*const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
+  //redirecting user to the nft page on kodadot
+  const kodadot = "https://canary.kodadot.xyz/ahp/gallery/7-";
       let u33 = u33 - 1 ;
       const link = kodadot + u33;
-  window.location.href = (link);*/
+  window.location.href = (link);
       
     } else {
         toast.info(`Current status: ${status.type}` , {
@@ -277,6 +339,9 @@ await api.tx.nfts.mint(u32, u33, MultiAddress,  witnessData ).signAndSend(SENDER
   
       
 });
+
+
+
 
 }
   return (
@@ -310,16 +375,18 @@ theme="colored" />
 />
 
 </div>
+      
+      
       <h1 className='PolkadotPunks'>Polkadot Punks</h1>
 <hr className='hr'></hr>
 <h2 className='count'>{u33} / 3000 Minted</h2>
-<h2 className='Price'> Mint Price : 2 DOT</h2>
+<h2 className='Price'> Mint Price : 5 DOT</h2>
       <div className='teleport-style'>
 <button onClick={teleport} className='teleport'>Teleport</button>
 </div>
 <br></br>
 <div className='mintitem'>
-<button onClick={bol} className='mint' >Mint Item</button>
+<button onClick={mint} className='mint' >Mint Item</button>
 </div>
 
 <hr className='hr2'></hr>
