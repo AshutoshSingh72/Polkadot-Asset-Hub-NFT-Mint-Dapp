@@ -43,7 +43,7 @@ function App() {
 
   const setup = async() => {
     //This wsProvider is for Polkadot based mint dapp for kusama change statemint to statemine only
-    const wsProvider = new WsProvider("wss://statemint.api.onfinality.io");
+    const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
   }
@@ -187,9 +187,9 @@ api.tx.utility.batchAll([ await api.tx.xcmPallet.limitedTeleportAssets(dest, ben
 
   }
   //Mint Function 
-async function mint(){
+async function bol(){
   //kusama wsProvider wss://kusama-rpc.polkadot.io
-  const wsProvider = new WsProvider("wss://statemint.api.onfinality.io");
+  const wsProvider = new WsProvider("wss://statemint-rpc.polkadot.io");
     const api = await ApiPromise.create({ provider: wsProvider})
     setApi(api);
   // (this needs to be called first, before other requests)
@@ -319,7 +319,7 @@ theme="colored" />
 </div>
 <br></br>
 <div className='mintitem'>
-<button onClick={mint} className='mint' >Mint Item</button>
+<button onClick={bol} className='mint' >Mint Item</button>
 </div>
 
 <hr className='hr2'></hr>
